@@ -1,0 +1,22 @@
+echo -e 'This is the first step with the terminal: \nI am using the echo command to print out to the terminal'
+
+echo 'HaNoi 15-8
+NAM'
+
+echo -e 'you can also use pwd as a way to printout the directory\n/home/nam/Desktop/Linux'
+
+echo -e 'cd is also a very useful command :\ncd ~ : command that change to home directory
+cd / : command that change to root direcotry'
+
+echo -e '\n'
+
+echo -e 'Command ls is also very common command, it have some option: 
+-a : List all hidden file/folders
+-r : reverse the hidden list
+-t : List file/folders by time
+-l : for details '
+
+echo -e '\n'
+
+echo -e 'You can also doing multiple commands using ";" for examle : echo -n 'Hello'; echo -e 'World' '
+echo -e '\nAnd the Result is Hello World'
