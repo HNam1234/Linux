@@ -1,0 +1,24 @@
+echo -e 'So in the past, we used touch for create a new file, but the actual purpose of touch is to modify the timestamp of that file'
+
+echo -e '\nFor example: when i used the command: "touch file.txt", if the file is existed, it will modify the timestamp to the time now, otherwise, it will create a new file, which were still using this purpose!'
+
+echo -e '\nCommand mkdir using for create a new folder!\nFor example: mkdir newFolder'
+
+echo -e '\nCommand mv using for move file to folder \nFor example: mv file.txt newFolder'
+
+echo -e '\n"mv file1.txt newFolder/file.txt"  this command move and also rename the file from file1 to file'
+
+echo -e '\n"cp" work the same way as "mv" but it doesnt delete the origin file'
+
+echo -e '\nTo copy a folder, we have to use "-r" to copy the whole folder!'
+
+echo -e '\nThe same theory is apply for "rm". We use rm to delete file, and rm -r to delete folder and its sub file!'
+
+echo -e '\nThe funny thing is that! the rmdir is only delete empty folder!'
+
+echo -e '\nThe command "mv *.jpg images/" using to move all the file that end with .jpg to images file! 
+But the actual things happen underthehood is that the bash rewrite the command
+before the move command execute! for example, when we type above command to move
+all the imagefile to images folder, if the folder contains image1.jpg, image2.jpg,
+the bash automatically rewrite to "mv image1.jpg image2.jpg images/" before the 
+command move execute!'
