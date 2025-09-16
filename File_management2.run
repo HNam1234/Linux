@@ -1,0 +1,25 @@
+echo -e 'This is part 2 of file management! This part aiming for reading/editing
+file that have many thousands of lines :) . So how can we read that kind of file ?
+Let go and findout!'
+
+echo -e '\nOk, so the file that contains thousand of line is romeo.txt. I will put
+that file in the same folder as this file!'
+
+echo -e '\nSo basicaly, we can read head or tail of the file with command:
+head -n 50 romeo.txt : To display the first 50 lines of file romeo.txt
+tail -n 20 romeo.txt : To display the last 20 lines of file romeo.txt
+
+also, you can use "less" as a tool to read the large file! its like textviewer!
+navigate using: "f" to turn page, "b" to turn back page, -N to display number of
+line
+
+and we can count number of word using "wc" : for example : "wc -l romeo.txt" 5500
+this command display that romeo.txt contains 5500 lines, there are many option 
+using with "wc":
+-c : number of characters
+-w : number of words
+
+we can also check disk usage of a file using "du":
+for example:
+du romeo.txt 
+'
