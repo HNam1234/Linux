@@ -1,0 +1,15 @@
+echo -e 'This is the tutorial to print a output to a file : 
+we can execute :' 
+
+echo -e '$echo 'HelloWorld' > file.txt : This command create/replace file.txt with content
+is output of command echo 'HelloWorld''
+
+echo -e '$echo 'HelloWorld' >> file.txt : This command create/append file.txt the output
+of command echo 'HelloWorld''
+
+echo -e 'By default, there are 3 channel in Linux which are stdin(0) stdout(1) stderr(2)
+By using ">" or ">>", we are directly write stdout to file, nolonger print to screen.
+The command should be : 
+du -h romeo.txt 1>> out.txt (du -h romeo.txt >> out.txt) : append out put of command to out.txt
+du -h romeo1.txt 2>> error.txt : append error of command to error.txt(error1 not exist!)
+'
