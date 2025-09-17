@@ -1,0 +1,9 @@
+echo -e 'How do we count number of file in a folder ?
+1, ls > output.txt : this command will write all file in folder to output.txt
+2, wc -l output.txt : this command will calculate number of line a.k.a number of files
+3, rm output.txt : after we finish counting!
+
+this is very tedious way but the only way we can do with our knowledges
+rightnow, sadly :( but i will tell you another way we can do it in a command line
+which is magic and i promise you, you will use it many many times in the future:
+'
