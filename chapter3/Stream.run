@@ -13,3 +13,13 @@ The command should be :
 du -h romeo.txt 1>> out.txt (du -h romeo.txt >> out.txt) : append out put of command to out.txt
 du -h romeo1.txt 2>> error.txt : append error of command to error.txt(error1 not exist!)
 '
+
+echo -e 'To display error in stdout, we can redirect stderror to stdout:
+du -h remeo1.txt > out.txt 2>&1
+
+Remember that stdout have buffer and stderror doesnt! 
+Thats mean, in above example if error occur,it will write error to out.txt immediately,
+otherwise, stdout have buffer so it only write to out.txt when meet condition:
+1, condition 1: stdout buffer is full
+2, condition 2: user flush stdout buffer: via "\n"(std::endl) or flush api. 
+' 
