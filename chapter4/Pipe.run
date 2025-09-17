@@ -6,4 +6,48 @@ echo -e 'How do we count number of file in a folder ?
 this is very tedious way but the only way we can do with our knowledges
 rightnow, sadly :( but i will tell you another way we can do it in a command line
 which is magic and i promise you, you will use it many many times in the future:
+
+What is a pipe ? pipe is a mechanism that pass the output of one command as input
+to another command
+
+Thus, you can chain multiple commands together and build more complex functionalities
+Syntax : command | command | command ... | command
 '
+echo -e '\nUsing with pipe, there are several commonly used tool:
+1, tee: used to redirect stdout to both standard output and file at the sametime:
+ls -l | tee hello.txt : this command print to console and write to file hello.txt output of ls -l
+ls -l | tee -a hello.txt : add option -a to append to hello.txt
+FunFact: Tee is acutally T-shaped pipe which using for redirrect water in pipeline :)
+
+2, sort: which is using to sort data by alphabetically order line by line
+	$sort user.txt
+combine with "uniq" to delete all the duplicate line (uniq only delete the duplicate that stand by eachother, that why we do need sort first)
+	$sort user.txt | uniq
+we can use option -d to only display the duplicate one
+	$sort user.txt | uniq -d
+
+3, grep: Grep is a tool that can find a pattern in an output or a file, -F option to treat pattern as string
+	$grep -F 'pattern' file.txt
+usually use with stdin :
+	$ [command] | grep -F 'pattern'
+	$history | grep -F 'push'
+
+4, tr : replace character in string:
+	$ echo 'bash' | tr 'b' 'd' -> dash
+	$ echo 'bash' | tr 'ba' 'db' -> dbsh 
+under the hood, it will replace b -> d then a -> b. Character level, not the whole string ba -> db
+the best feature of tr and why its still popular because :
+	$ echo 'awesome' | tr 'a-z' 'A-Z': this will make all character UPERCASE
+	$ echo 'baby is awesome' | tr -d ' ' : delete ' ' character -> babyisawsome
+
+5, rev : reverse character :
+	$ echo 'bash' | rev -> hsab 
+
+6, cut : cut input character and display it:
+	$ echo 'bash' | cut -b 2 -> ba  : cut by byte
+	$ echo 'bash' | cut -c 3 -> bas : cut by character
+
+7, sed : use to add line , remove line , repalce line in stdout:
+	$ echo 'hello world' | sed 's/world/bash/g' -> hello bash : replace line of code
+'
+
