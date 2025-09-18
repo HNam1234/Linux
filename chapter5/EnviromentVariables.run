@@ -1,0 +1,25 @@
+echo -e 'Everything that allow outer world access the operating system is shell
+So basically, Graphic User Interface (GUI) is shell
+
+-CLI : A text based interface that allows user interact with operating system by
+typing commands
+So Linux shell refer to CLI/terminal/colsole
+
+-Although, both GUI and Terminal are shell, but when people mentioned shell in
+Linux, they commonly refer to terminal! be careful here.
+From now on , atleast in this course, shell = terminal!!!
+
+-Enviroment variables used to store configuration information and settings.
+These config influence the shell and program behavior.
+	$ env : display all enviroment variables
+	$ echo "{$USER}" / env "$USER"/ env $USER(not recommend) : enter USER variable ("$" to enter variable value)
+	$ echo "{$USER}hehe" : this is why we use {}. to add more character to logout better!
+
+-----------------------------
+
+There are some important enviroment variable:
+HOME : Store current directory path : for example : /home/user , /home/nam
+PWD : Store current working directory : the "pwd" command is print this variable out
+OLDPWD : Store the older working directory
+USER : Store current user
+'
