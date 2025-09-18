@@ -12,14 +12,71 @@ From now on , atleast in this course, shell = terminal!!!
 -Enviroment variables used to store configuration information and settings.
 These config influence the shell and program behavior.
 	$ env : display all enviroment variables
-	$ echo "{$USER}" / env "$USER"/ env $USER(not recommend) : enter USER variable ("$" to enter variable value)
+	$ echo "{$USER}" / echo "$USER"/ echo $USER(not recommend) : enter USER variable ("$" to enter variable value)
 	$ echo "{$USER}hehe" : this is why we use {}. to add more character to logout better!
 
 -----------------------------
 
 There are some important enviroment variable:
-HOME : Store current directory path : for example : /home/user , /home/nam
+HOME : Store current user directory path : for example : /home/user , /home/nam
 PWD : Store current working directory : the "pwd" command is print this variable out
 OLDPWD : Store the older working directory
 USER : Store current user
+SHELL : Store the current Shell load by default
+
+To create a new Enviroment variable: 
+	$ export CITY='ha noi'
+to change value of enviroment variable:
+	$ CITY='hcm'
+to delete enviroment variable:
+	$ unset CITY
+
+The most important enviroment variable is here : PATH
+Its store a list of directory which used to search for executable programs:
+ For examlple PATH value:
+	$ echo "{$PATH}"
+-> /home/nam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:
+/usr/local/games:/snap/bin:/snap/bin:/home/nam/.local/bin:/home/nam/.local/bin
+
+as we can see, there are multiple directory seperated eachother by ":". When we execute command :
+	$ cat file.txt
+Shell will find in those path to find "cat" program. So the order will matter here:
+1, Firs, look for "/home/nam/.local/bin"
+2, Second, look inside "/usr/local/sbin"
+3, Third, look in folder "/usr/local/bin"
+.....
+So that why order matter!
+
+So basically, assume cat inside folder "/home/nam/.local/bin", we can directly execute /home/nam/.local/bin/cat file.txt
+
+Why there are so many PATH? I mean all executable should be in one path right ? 
+Quick explain : each PATH has it own purpose: 
+
+/bin: essential binaries, always need to be avaiable
+/sbin: essential binaries of superuser, always need to be avaiable
+/user/bin: non-essential binaries for all user
+/user/sbin: non-essential binaries but executed as root
+/user/local/bin: non-essential binaries for all user, but specific for this host
+/user/local/sbin: non-essential binaries for all user usually executed as root, but specific for this host
+
+We also can add modify PATH to add executable file:
+
+For example we have executable file in "/home/nam/bin"
+we can add this path to PATH by using command:
+	$ PATH="${PATH}:/home/nam/bin"
+
+Enviroment variables are automatically available for all programs that we launch
+
+-Enviroment variable often used to pass configure data to programs : key, URLs, even password,...
+-If you run your own app, you might also consider passing in the configuration as enviroment variables
+rather than hardcoded it in code.
+
+-There are some bash startupfile , we seperate 2 kind of startup file:
+1, Interactive login shell: ~/.bash_profile, ~/.bash_login, ~/.profile
+2, Interactive non-login shell: ~/.bashrc
+
+Login shell (first login/SSH): reads ~/.bash_profile (or .bash_login / .profile) → sets environment variables (PATH, EDITOR,...)
+Non-login shell (new terminal when already login): reads ~/.bashrc → sets aliases, functions, prompt, etc.
+
+We usally change/add an environment variable to .bashrc if we want to add it whenever open a new bash terminal
 '
