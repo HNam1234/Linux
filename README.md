@@ -5,3 +5,4 @@ chapter1: Begin with Terminal <br>
 chapter2: File management <br>
 chapter3: Stream in linux <br>
 chapter4: Pipe <br>
+chapter5: Environment variable <br>
